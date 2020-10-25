@@ -1,0 +1,17 @@
+<div *ngIf="!hasError" class="mat-elevation-z2 vehicle-box">
+  <p> <strong>Name : </strong> {{vehicle?.owner_name}} </p>
+  <p> <strong>Registration no : </strong> {{vehicle?.registration_no}} </p>
+  <p> <strong>Engine No : </strong> {{vehicle?.engine_no}} </p>
+  <p> <strong>Chassis No : </strong> {{vehicle?.chassis_no}} </p>
+  <p> <strong>Fuel Type : </strong> {{vehicle?.fuel_type}} </p>
+  <p> <strong>Make : </strong> {{vehicle?.maker___model}} </p>
+  <p> <strong>Vehicle Class : </strong> {{vehicle?.vehicle_class}} </p>
+</div>
+
+<div *ngIf="hasError" class="mat-elevation-z2 vehicle-box">
+  <p> {{hasError}}</p>
+</div>
+
+<button mat-raised-button color="accent" style="margin: 2px;" (click)="goBack()">
+  Back
+</button>
