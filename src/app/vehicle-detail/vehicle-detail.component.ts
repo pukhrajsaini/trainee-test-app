@@ -22,10 +22,13 @@ export class VehicleDetailComponent implements OnInit {
   }
 
   private getVehicleDetails(params) {
+    this.isLoading = true;
     const { reg1, reg2 } = params;
     this.$vehicleService.getVehicleDetails(reg1, reg2).subscribe(data => {
       this.vehicle = data;
+      this.isLoading = false;
     }, err => {
+      this.isLoading = false;
       this.hasError = JSON.stringify(err);
     });
   }
